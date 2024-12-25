@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Login Form</title>
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+      <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+   </head>
+   <body>
+      <div class="ring">
+         <i style="--clr:#00ffBa;"></i>
+         <i style="--clr:#ff0057;"></i>
+         <i style="--clr:#fffd44;"></i>
+         <div class="login">
+            <h2>Login</h2>
+            <form id="loginForm">
+               <div class="input8x">
+                  <input type="text" id="username" placeholder="Username" required>
+               </div>
+               <div class="input8x">
+                  <input type="password" id="password" placeholder="Password" required>
+               </div>
+               <div class="input8x">
+                  <button type="submit">Sign in</button>
+               </div>
+            </form>
+         </div>
+      </div>
+
+      <!-- Thêm JavaScript -->
+      <script>
+         document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Ngừng gửi form mặc định
+
+            // Lấy giá trị của username và password từ form
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Kiểm tra thông tin đăng nhập
+            if (username === 'Admin' && password === 'Admin1') {
+                alert('Login successful!');
+                
+                // Chuyển hướng đến trang mới (ví dụ: dashboard.html)
+                window.location.href = 'Succesful.html'; // Thay 'dashboard.html' bằng đường dẫn trang của bạn
+            } else {
+                alert('Invalid credentials. Please try again.');
+            }
+         });
+      </script>
+   </body>
+</html>
